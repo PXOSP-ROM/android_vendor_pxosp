@@ -34,7 +34,9 @@ SOONG_CONFIG_lineageGlobalVars += \
 SOONG_CONFIG_NAMESPACES += lineageQcomVars
 SOONG_CONFIG_lineageQcomVars += \
     supports_extended_compress_format \
-    uses_qti_camera_device
+    uses_qti_camera_device \
+    supports_hw_fde \
+    supports_hw_fde_perf
 
 # Only create display_headers_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
 ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
@@ -45,6 +47,8 @@ endif
 # Soong bool variables
 SOONG_CONFIG_lineageQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_lineageQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
+SOONG_CONFIG_lineageQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
+SOONG_CONFIG_lineageQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
 
 # Set default values
 TARGET_INIT_VENDOR_LIB ?= vendor_init

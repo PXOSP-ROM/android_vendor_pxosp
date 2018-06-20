@@ -148,3 +148,47 @@ surfaceflinger_qcom_extensions {
         },
     },
 }
+
+soong_config_module_type {
+    name: "vold_hw_fde",
+    module_type: "cc_defaults",
+    config_namespace: "lineageQcomVars",
+    bool_variables: ["device_support_hwfde"],
+    properties: [
+        "cflags",
+        "header_libs",
+        "shared_libs",
+    ],
+}
+
+vold_hw_fde {
+    name: "vold_hw_fde_defaults",
+    soong_config_variables: {
+        device_support_hwfde: {
+            cflags: ["-DCONFIG_HW_DISK_ENCRYPTION"],
+            header_libs: ["libcryptfs_hw_headers"],
+            shared_libs: ["libcryptfs_hw"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "vold_hw_fde_perf",
+    module_type: "cc_defaults",
+    config_namespace: "lineageQcomVars",
+    bool_variables: ["device_support_hwfde_perf"],
+    properties: [
+        "cflags",
+        "shared_libs",
+    ],
+}
+
+vold_hw_fde_perf {
+    name: "vold_hw_fde_perf_defaults",
+    soong_config_variables: {
+        device_support_hwfde_perf: {
+            cflags: ["-DCONFIG_HW_DISK_ENCRYPT_PERF"],
+            shared_libs: ["libcryptfs_hw"],
+        },
+    },
+}
