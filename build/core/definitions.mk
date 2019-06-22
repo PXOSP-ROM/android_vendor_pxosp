@@ -3,4 +3,7 @@
 #
 
 # Include QCOM macros
-include vendor/proton/build/core/qcom_utils.mk
+include vendor/proton/build/core/utils.mk
+
+# Include vendor platform definitions
+include vendor/proton/build/core/vendor/*.mk
