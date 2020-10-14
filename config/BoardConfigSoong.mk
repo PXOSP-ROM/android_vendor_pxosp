@@ -25,3 +25,34 @@ define addVar
 endef
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
+
+SOONG_CONFIG_NAMESPACES += lineageGlobalVars
+SOONG_CONFIG_lineageGlobalVars += \
+    target_init_vendor_lib \
+    target_surfaceflinger_fod_lib
+
+SOONG_CONFIG_NAMESPACES += lineageQcomVars
+SOONG_CONFIG_lineageQcomVars += \
+    supports_extended_compress_format \
+    uses_qti_camera_device
+
+# Only create soong_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
+ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+SOONG_CONFIG_lineageQcomVars += \
+    qcom_soong_namespace
+endif
+
+# Soong bool variables
+SOONG_CONFIG_lineageQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
+SOONG_CONFIG_lineageQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
+
+# Set default values
+TARGET_INIT_VENDOR_LIB ?= vendor_init
+TARGET_SURFACEFLINGER_FOD_LIB ?= surfaceflinger_fod_lib
+
+# Soong value variables
+SOONG_CONFIG_lineageGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
+SOONG_CONFIG_lineageGlobalVars_target_surfaceflinger_fod_lib := $(TARGET_SURFACEFLINGER_FOD_LIB)
+ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+SOONG_CONFIG_lineageQcomVars_qcom_soong_namespace := $(QCOM_SOONG_NAMESPACE)
+endif
