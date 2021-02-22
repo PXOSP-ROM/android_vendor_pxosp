@@ -33,6 +33,7 @@ SOONG_CONFIG_lineageGlobalVars += \
 
 SOONG_CONFIG_NAMESPACES += lineageQcomVars
 SOONG_CONFIG_lineageQcomVars += \
+    legacy_hw_disk_encryption \
     supports_extended_compress_format \
     uses_qti_camera_device \
     supports_hw_fde \
@@ -49,6 +50,7 @@ SOONG_CONFIG_lineageQcomVars_supports_extended_compress_format := $(AUDIO_FEATUR
 SOONG_CONFIG_lineageQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
 SOONG_CONFIG_lineageQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_lineageQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
+SOONG_CONFIG_lineageQcomVars_legacy_hw_disk_encryption := $(TARGET_LEGACY_HW_DISK_ENCRYPTION)
 
 # Set default values
 TARGET_INIT_VENDOR_LIB ?= vendor_init
