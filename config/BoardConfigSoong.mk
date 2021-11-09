@@ -29,7 +29,8 @@ $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 SOONG_CONFIG_NAMESPACES += lineageGlobalVars
 SOONG_CONFIG_lineageGlobalVars += \
     target_init_vendor_lib \
-    target_surfaceflinger_udfps_lib
+    target_surfaceflinger_udfps_lib \
+    camera_needs_client_info_lib
 
 SOONG_CONFIG_NAMESPACES += lineageQcomVars
 SOONG_CONFIG_lineageQcomVars += \
@@ -48,6 +49,7 @@ SOONG_CONFIG_lineageQcomVars += \
 endif
 
 # Soong bool variables
+SOONG_CONFIG_lineageGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
 SOONG_CONFIG_lineageQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_lineageQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
 SOONG_CONFIG_lineageQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
