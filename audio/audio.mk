@@ -85,5 +85,5 @@ PRODUCT_COPY_FILES += \
 # Use Material product sounds by default
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.ringtone=material_minimal.ogg \
-    ro.config.alarm_alert=material_gentle.ogg \
+    ro.config.alarm_alert=plasma-mobile_gentle.ogg \
     ro.config.notification_sound=material_simple_1.ogg \
