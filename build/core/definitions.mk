@@ -3,7 +3,7 @@
 #
 
 # Include QCOM macros
-include vendor/proton/build/core/utils.mk
+include vendor/pxosp/build/core/utils.mk
 
 # Include vendor platform definitions
-include vendor/proton/build/core/vendor/*.mk
+include vendor/pxosp/build/core/vendor/*.mk

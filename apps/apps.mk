@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, vendor/proton/themes/themes.mk)
+$(call inherit-product, vendor/pxosp/themes/themes.mk)
 
-LOCAL_PATH := vendor/proton/apps
+LOCAL_PATH := vendor/pxosp/apps
 
 # LineageOS apps
 PRODUCT_PACKAGES += \

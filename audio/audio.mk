@@ -17,7 +17,7 @@ $(call inherit-product, frameworks/base/data/sounds/AudioPackage14.mk)
 
 # 2019 Material product sounds (CC-BY 4.0)
 # Source:  https://material.io/design/sound/sound-resources.html
-LOCAL_PATH := vendor/proton/audio
+LOCAL_PATH := vendor/pxosp/audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/alarms/material_gentle.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/material_gentle.ogg \
     $(LOCAL_PATH)/notifications/material_ambient.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/material_ambient.ogg \

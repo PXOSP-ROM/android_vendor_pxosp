@@ -1,2 +1,2 @@
 # Rules for QCOM targets
-include $(TOPDIR)vendor/proton/build/core/qcom_target.mk
+include $(TOPDIR)vendor/pxosp/build/core/qcom_target.mk

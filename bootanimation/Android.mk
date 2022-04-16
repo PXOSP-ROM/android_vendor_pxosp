@@ -16,7 +16,7 @@
 #
 
 ifeq ($(TARGET_BOOTANIMATION),)
-    TARGET_BOOTANIMATION := vendor/proton/bootanimation/bootanimation.zip
+    TARGET_BOOTANIMATION := vendor/pxosp/bootanimation/bootanimation.zip
 endif
 
 include $(CLEAR_VARS)
