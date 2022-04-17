@@ -91,6 +91,23 @@ surfaceflinger_udfps_lib {
 
 // QCOM specific config modules
 soong_config_module_type {
+    name: "librmnetctl_pre_uplink",
+    module_type: "cc_defaults",
+    config_namespace: "lineageQcomVars",
+    bool_variables: ["uses_pre_uplink_features_netmgrd"],
+    properties: ["cflags"],
+}
+
+librmnetctl_pre_uplink {
+    name: "librmnetctl_pre_uplink_defaults",
+    soong_config_variables: {
+        uses_pre_uplink_features_netmgrd: {
+            cflags: ["-DNO_UPLINK_FEATURES"],
+        },
+    },
+}
+
+soong_config_module_type {
     name: "qti_camera_device",
     module_type: "cc_defaults",
     config_namespace: "lineageQcomVars",
@@ -196,7 +213,7 @@ vold_hw_fde_perf {
 soong_config_module_type {
     name: "legacy_hw_disk_encryption",
     module_type: "cc_defaults",
-    config_namespace: "customQcomVars",
+    config_namespace: "lineageQcomVars",
     bool_variables: ["legacy_hw_disk_encryption"],
     properties: ["cppflags"],
 }
@@ -206,6 +223,23 @@ legacy_hw_disk_encryption {
     soong_config_variables: {
         legacy_hw_disk_encryption: {
             cppflags: ["-DLEGACY_HW_DISK_ENCRYPTION"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "qti_cryptfshw_qsee",
+    module_type: "cc_defaults",
+    config_namespace: "lineageQcomVars",
+    bool_variables: ["should_wait_for_qsee"],
+    properties: ["cflags"],
+}
+
+qti_cryptfshw_qsee {
+    name: "qti_cryptfshw_qsee_defaults",
+    soong_config_variables: {
+        should_wait_for_qsee: {
+            cflags: ["-DWAIT_FOR_QSEE"],
         },
     },
 }
