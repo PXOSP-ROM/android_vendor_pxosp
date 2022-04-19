@@ -20,6 +20,7 @@ LOCAL_PATH := vendor/pxosp/apps
 PRODUCT_PACKAGES += \
     ExactCalculator \
     Jelly \
+    messaging \
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
