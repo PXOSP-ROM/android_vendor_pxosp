@@ -31,6 +31,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig \
 
+# TouchGestures
+PRODUCT_PACKAGES += \
+    TouchGestures
+
 # Wallpapers
 PRODUCT_PACKAGES += \
     ProtonWallpaperStub \
