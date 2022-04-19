@@ -21,6 +21,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     Jelly \
     messaging \
+    Etar
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
