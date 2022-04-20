@@ -12,9 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CUSTOM_ROM_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
-CUSTOM_ROM_VERSION := 12.1.0
+PXOSP_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
+PXOSP_VERSION := 12.1.0
+PXOSP_BUILD_TYPE ?= VANILLA
+
+ifeq ($(WITH_GMS), true)
+    PXOSP_BUILD_TYPE := GAPPS
+endif
 
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.build.date.custom=$(CUSTOM_ROM_BUILD_DATE) \
-    ro.build.version.custom=$(CUSTOM_ROM_VERSION)
+    ro.build.date.pxosp=$(PXOSP_BUILD_DATE) \
+    ro.build.version.pxosp=$(PXOSP_VERSION) \
+    ro.build.type.pxop=$(PXOSP_BUILD_TYPE)
