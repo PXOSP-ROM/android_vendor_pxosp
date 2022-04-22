@@ -21,6 +21,9 @@ $(call inherit-product, vendor/pxosp/telephony/telephony.mk)
 $(call inherit-product, vendor/pxosp/audio/audio.mk)
 $(call inherit-product-if-exists, vendor/pxosp/signing/dev.mk)
 
+# Inherit Pixel vendor
+$(call inherit-product, vendor/google/pixel/config.mk)
+
 # Flatten APEXs for performance
 OVERRIDE_TARGET_FLATTEN_APEX := true
 # This needs to be specified explicitly to override ro.apex.updatable=true from
