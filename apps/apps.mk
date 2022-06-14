@@ -21,7 +21,8 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     Jelly \
     messaging \
-    Etar
+    Etar \
+    Recorder
 
 # Custom apps
 PRODUCT_PACKAGES += \
