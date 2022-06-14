@@ -13,7 +13,7 @@
 # limitations under the License.
 
 PXOSP_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
-PXOSP_VERSION := 12.0.1
+PXOSP_VERSION := 12.1
 PXOSP_BUILD_TYPE ?= VANILLA
 
 ifeq ($(WITH_GMS), true)
