@@ -23,6 +23,11 @@ PRODUCT_PACKAGES += \
     messaging \
     Etar
 
+# Custom apps
+PRODUCT_PACKAGES += \
+    RetroMusic \
+    Leaflet
+
 # SystemUI plugins
 PRODUCT_PACKAGES += \
     QuickAccessWallet \
