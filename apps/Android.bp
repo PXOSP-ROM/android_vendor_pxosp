@@ -1,0 +1,19 @@
+android_app_import {
+	name: "RetroMusic",
+	apk: "RetroMusic/RetroMusic.apk",
+	presigned: true,
+	dex_preopt: {
+		enabled: false,
+	},
+	product_specific: true,
+}
+
+android_app_import {
+        name: "Leaflet",
+        apk: "Leaflet/Leaflet.apk",
+        presigned: true,
+        dex_preopt: {
+                enabled: false,
+        },
+        product_specific: true,
+}
