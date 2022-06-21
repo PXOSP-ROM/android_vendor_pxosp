@@ -27,7 +27,8 @@ PRODUCT_PACKAGES += \
 # Custom apps
 PRODUCT_PACKAGES += \
     RetroMusic \
-    Leaflet
+    Leaflet \
+    GameSpace
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
